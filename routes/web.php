@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GuestPokedexController as PokedexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout.app');
-});
+Route::get('/', [PokedexController::class, 'index']);
