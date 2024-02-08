@@ -9,11 +9,13 @@
     @vite('resources/js/app.js')
 
 </head>
-<body>
+<body class="bg-dark">
+    @include('partials.header')
+
     <main>
-        <h1>
-            Enjoy Laravel!
-        </h1>
+        @yield('main-content')
     </main>
+
+    @include('partials.footer')
 </body>
 </html>

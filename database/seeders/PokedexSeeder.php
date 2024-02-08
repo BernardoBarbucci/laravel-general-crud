@@ -20,9 +20,9 @@ class PokedexSeeder extends Seeder
             $newPokemon->type = $faker->text();
             $newPokemon->ability = $faker->text();
             $newPokemon->description = $faker->text();
-            $newPokemon->height = $faker->randomNumber();
-            $newPokemon->weight = $faker->randomNumber();
-            $newPokemon->evolution_stage = $faker->randomNumber();
+            $newPokemon->height = $faker->randomDigit();
+            $newPokemon->weight = $faker->randomDigit();
+            $newPokemon->evolution_stage = $faker->name();
             $newPokemon->image_url = $faker->imageUrl(200, 300);
             $newPokemon->save();
         }
