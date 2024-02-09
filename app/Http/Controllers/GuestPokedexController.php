@@ -37,7 +37,7 @@ class GuestPokedexController extends Controller
 
         $newPokemon = Pokedex::create($newPokedexData);
 
-        return redirect()->route('guest.pokedex.show', $newPokemon->id);
+        return redirect()->route('pokedex.show', $newPokemon->id);
     }
 
     // Metodo per visualizzare un elemento specifico del Pokedex
