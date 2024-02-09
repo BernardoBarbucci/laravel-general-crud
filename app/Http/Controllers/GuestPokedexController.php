@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pokedex;
-
+use Database\Seeders\PokedexSeeder;
 
 class GuestPokedexController extends Controller
 {
@@ -22,6 +22,22 @@ class GuestPokedexController extends Controller
     // Metodo per salvare un nuovo elemento del Pokedex nel database
     public function store(Request $request)
     {
+        $newPokedexData = $request->all();
+
+        $newPokemon = new Pokedex();
+        $newPokemon->name = $newPokedexData['name'];
+        $newPokemon->type = $newPokedexData['type'];
+        $newPokemon->ability = $newPokedexData['ability'];
+        $newPokemon->description = $newPokedexData['description'];
+        $newPokemon->height = $newPokedexData['height'];
+        $newPokemon->weight = $newPokedexData['weight'];
+        $newPokemon->evolutio = $newPokedexData['evolutio'];
+        $newPokemon->image_url = $newPokedexData['image_url'];
+        $newPokemon->save();
+
+        $newPokemon = Pokedex::create($newPokedexData);
+
+        return redirect()->route('guest.pokedex.show', $newPokemon->id);
     }
 
     // Metodo per visualizzare un elemento specifico del Pokedex
