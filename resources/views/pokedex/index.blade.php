@@ -21,6 +21,7 @@
                         <a href="#" class="card-link">Card link</a>
                         <a href="#" class="card-link">Another link</a>
                         </div> --}}
+                        <button type="submit" class="btn btn-danger">Elimina</button>
                     </div>
             @empty
                 <div>
