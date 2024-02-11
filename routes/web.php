@@ -13,8 +13,11 @@ use App\Http\Controllers\GuestPokedexController as PokedexController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', function () {
+    return view('pokedex.home');
+})->name('pokedex.home');
 
-Route::get('/', [PokedexController::class, 'index']);
+Route::get('/pokedex', [PokedexController::class, 'index']);
 
 // route per create
 Route::get('/pokedex/create', [PokedexController::class, 'create'])->name('pokedex.create');
