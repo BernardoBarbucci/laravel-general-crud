@@ -1,4 +1,7 @@
-<section class="container-fluid bg-dark">
+@extends('layout.app')
+
+@section('main-content')
+<section class="container-fluid bg-dark" style="height: 100vh">
     <section class="d-flex justify-content-center align-items-center">
         <form method="POST" action="{{ route('pokedex.create') }}" class="list-group">
             @csrf
@@ -34,3 +37,4 @@
         
     </section>
 </section>
+@endsection
