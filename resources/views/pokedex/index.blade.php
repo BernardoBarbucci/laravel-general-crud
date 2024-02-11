@@ -17,11 +17,18 @@
                         <li class="list-group-item"><strong>Pokemon weight:</strong> <br>{{ $pokemon->weight }}</li>
                         <li class="list-group-item"><strong>Evolution stage:</strong> <br>{{ $pokemon->evolution_stage }}</li>
                         </ul>
-                        <div class="card-body">
-                            <a href="{{route('pokedex.show', $pokemon['id'])}}" class="card-link">Card link</a>
-                            {{-- <a href="#" class="card-link">Another link</a> --}}
-                        </div>
-                        <button type="submit" class="btn btn-danger">Elimina</button>
+                        {{-- <div class="card-body">
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                        </div> --}}
+                   
+                            <form class="d-inline-block" action="{{ route('pokedex.delete', $pokemon->id) }}" method="POST"> 
+                                @csrf
+                                @method('DELETE')   
+                                
+                            <button class="btn btn-danger">Elimina</button>
+                        </form>
+                            
                     </div>
             @empty
                 <div>
