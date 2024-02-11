@@ -57,7 +57,11 @@ class GuestPokedexController extends Controller
     }
 
     // Metodo per eliminare un elemento del Pokedex dal database
-    public function destroy($id)
+    public function destroy(Pokedex $pokemon)
     {
+   
+        $pokemon->delete();
+    
+        return redirect()->route('pokedex.index'); 
     }
 }
