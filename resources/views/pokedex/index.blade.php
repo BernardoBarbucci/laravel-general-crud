@@ -21,7 +21,14 @@
                         <a href="#" class="card-link">Card link</a>
                         <a href="#" class="card-link">Another link</a>
                         </div> --}}
-                        <button type="submit" class="btn btn-danger">Elimina</button>
+                   
+                            <form class="d-inline-block" action="{{ route('pokedex.delete', $pokemon->id) }}" method="POST"> 
+                                @csrf
+                                @method('DELETE')   
+                                
+                            <button class="btn btn-danger">Elimina</button>
+                        </form>
+                            
                     </div>
             @empty
                 <div>

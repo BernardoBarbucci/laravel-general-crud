@@ -17,6 +17,7 @@ class GuestPokedexController extends Controller
     // Metodo per visualizzare la pagina di creazione di un nuovo elemento del Pokedex
     public function create()
     {
+        return view('pokedex.create');
     }
 
     // Metodo per salvare un nuovo elemento del Pokedex nel database
@@ -31,7 +32,7 @@ class GuestPokedexController extends Controller
         $newPokemon->description = $newPokedexData['description'];
         $newPokemon->height = $newPokedexData['height'];
         $newPokemon->weight = $newPokedexData['weight'];
-        $newPokemon->evolutio = $newPokedexData['evolutio'];
+        $newPokemon->evolution_stage = $newPokedexData['evolution_stage'];
         $newPokemon->image_url = $newPokedexData['image_url'];
         $newPokemon->save();
 
@@ -41,8 +42,9 @@ class GuestPokedexController extends Controller
     }
 
     // Metodo per visualizzare un elemento specifico del Pokedex
-    public function show($id)
-    {
+    public function show(string $id){
+        $pokemon = Pokedex::findOrFail($id);
+        return view('pokedex.show', compact('pokemon'));
     }
 
     // Metodo per visualizzare il form di modifica di un elemento del Pokedex
@@ -56,7 +58,11 @@ class GuestPokedexController extends Controller
     }
 
     // Metodo per eliminare un elemento del Pokedex dal database
-    public function destroy($id)
+    public function destroy(Pokedex $pokemon)
     {
+   
+        $pokemon->delete();
+    
+        return redirect()->route('pokedex.index'); 
     }
 }
