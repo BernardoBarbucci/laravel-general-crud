@@ -42,8 +42,9 @@ class GuestPokedexController extends Controller
     }
 
     // Metodo per visualizzare un elemento specifico del Pokedex
-    public function show($id)
-    {
+    public function show(string $id){
+        $pokemon = Pokedex::findOrFail($id);
+        return view('pokedex.show', compact('pokemon'));
     }
 
     // Metodo per visualizzare il form di modifica di un elemento del Pokedex
