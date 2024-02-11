@@ -22,11 +22,11 @@
                         <a href="#" class="card-link">Another link</a>
                         </div> --}}
                    
-                            <form class="d-inline-block" action="{{ route('pokedex.delete', $pokemon->id) }}" method="POST"> 
+                            <form class="d-inline-block pokemon-eraser" action="{{ route('pokedex.destroy', $pokemon->id) }}" method="POST"> 
                                 @csrf
                                 @method('DELETE')   
                                 
-                            <button class="btn btn-danger">Elimina</button>
+                            <button class="btn btn-warning p-1 mt-2">Elimina</button>
                         </form>
                             
                     </div>
@@ -40,4 +40,19 @@
         </div>
     </section>
 
+@endsection
+
+@section('script-content')
+<script>
+   const form = document.querySelector('form.pokemon-eraser');
+
+   formsList.forEach(form => { 
+        form.addEventListener('click', function(event) {
+        event.preventDefault();
+        const confirmWindow = window.confirm('Vuoi eliminare questo Pokemon?');
+        if (confirmWindow) this.submit();
+        });
+   })
+
+</script>
 @endsection

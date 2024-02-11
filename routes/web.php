@@ -26,7 +26,7 @@ Route::post('/pokedex', [PokedexController::class, 'store'])->name('pokedex.stor
 
 // route per delete
 Route::get('pokedex', [PokedexController::class, 'index'])->name('pokedex.index');
-Route::delete('pokedex/{pokemon}', [PokedexController::class, 'destroy'])->name('pokedex.delete');  
+Route::delete('pokedex/{pokemon}', [PokedexController::class, 'destroy'])->name('pokedex.destroy');  
 Route::get('/pokedex/{id}', [PokedexController::class, 'show'])->name('pokedex.show');
 
 //
