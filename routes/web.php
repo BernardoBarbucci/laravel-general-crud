@@ -18,3 +18,4 @@ Route::get('/', [PokedexController::class, 'index']);
 
 // route per create
 Route::get('/pokedex/create', [PokedexController::class, 'create'])->name('pokedex.create');
+Route::post('/pokedex', [PokedexController::class, 'store'])->name('pokedex.store');

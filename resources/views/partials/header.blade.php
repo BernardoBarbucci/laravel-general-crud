@@ -4,4 +4,7 @@
             Pokedex
         </h1>
     </section>
+    <section class="row d-flex">
+        <a href="{{ route('pokedex.create') }}" class="btn btn-primary">Create Pokemon</a>
+    </section>
 </header>
