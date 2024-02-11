@@ -32,7 +32,7 @@ class GuestPokedexController extends Controller
         $newPokemon->description = $newPokedexData['description'];
         $newPokemon->height = $newPokedexData['height'];
         $newPokemon->weight = $newPokedexData['weight'];
-        $newPokemon->evolutio = $newPokedexData['evolutio'];
+        $newPokemon->evolution_stage = $newPokedexData['evolution_stage'];
         $newPokemon->image_url = $newPokedexData['image_url'];
         $newPokemon->save();
 
