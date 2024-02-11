@@ -17,6 +17,7 @@ class GuestPokedexController extends Controller
     // Metodo per visualizzare la pagina di creazione di un nuovo elemento del Pokedex
     public function create()
     {
+        return view('pokedex.create');
     }
 
     // Metodo per salvare un nuovo elemento del Pokedex nel database
