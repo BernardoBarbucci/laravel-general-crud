@@ -49,12 +49,15 @@ class GuestPokedexController extends Controller
 
     // Metodo per visualizzare il form di modifica di un elemento del Pokedex
     public function edit($id)
-    {
+    {$pokemon = Pokedex::findOrFail($id);
+        return view('pokedex.edit', compact('pokemon'));
     }
 
     // Metodo per aggiornare un elemento del Pokedex nel database
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, Pokedex $pokedex)
+    {$data = $request->all();
+        $pokedex->update($data);
+        return redirect()->route('pokedex.show', $pokedex->id);
     }
 
     // Metodo per eliminare un elemento del Pokedex dal database

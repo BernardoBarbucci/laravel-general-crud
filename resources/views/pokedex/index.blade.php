@@ -26,7 +26,7 @@
                 @csrf
                 @method('DELETE')
 
-                <button type="submit" class="btn btn-warning">Modifica</button>
+                <a href="{{route('pokedex.show', $pokemon->id)}}"><button type="submit" class="btn btn-warning">Modifica</button></a>
                 <button class="btn btn-danger">Elimina</button>
             </form>
 

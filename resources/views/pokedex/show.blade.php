@@ -20,7 +20,7 @@
                 <a href="#" class="card-link">Card link</a>
                 <a href="#" class="card-link">Another link</a>
                 </div> --}}
-                <button type="submit" class="btn btn-warning mt-2">Modifica</button>
+                <a href="{{route('pokedex.edit', $pokemon->id)}}"><button type="submit" class="btn btn-warning w-100 mb-2">Modifica</button></a>
                 <button type="submit" class="btn btn-danger">Elimina</button>
             </div>
         </div>

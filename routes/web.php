@@ -31,3 +31,6 @@ Route::get('/pokedex/{id}', [PokedexController::class, 'show'])->name('pokedex.s
 
 // route per edit
 Route::get('pokedex/{pokedex}/edit', [PokedexController::class, 'edit'])->name('pokedex.edit');
+
+// route per upfate
+Route::put('pokedex/{pokedex}', [PokedexController::class, 'update'])->name('pokedex.update');
