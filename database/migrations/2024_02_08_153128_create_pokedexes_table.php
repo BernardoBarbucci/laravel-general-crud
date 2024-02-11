@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('height');
             $table->string('weight');
-            $table->string('evolution_stage');
+            $table->string('evolution_stage')->nullable();
             $table->string('image_url');
             $table->timestamps();
         });

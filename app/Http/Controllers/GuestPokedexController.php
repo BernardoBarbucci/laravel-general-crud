@@ -17,6 +17,7 @@ class GuestPokedexController extends Controller
     // Metodo per visualizzare la pagina di creazione di un nuovo elemento del Pokedex
     public function create()
     {
+        return view('pokedex.create');
     }
 
     // Metodo per salvare un nuovo elemento del Pokedex nel database
@@ -31,7 +32,7 @@ class GuestPokedexController extends Controller
         $newPokemon->description = $newPokedexData['description'];
         $newPokemon->height = $newPokedexData['height'];
         $newPokemon->weight = $newPokedexData['weight'];
-        $newPokemon->evolutio = $newPokedexData['evolutio'];
+        $newPokemon->evolution_stage = $newPokedexData['evolution_stage'];
         $newPokemon->image_url = $newPokedexData['image_url'];
         $newPokemon->save();
 
